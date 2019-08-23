@@ -1,17 +1,6 @@
 ---
 
-- name: Add PPA
-  apt_repository:
-    repo: "ppa:mamarley/quassel"
-
 - name: Install
   apt:
     name: quassel-core
     cache_valid_time: 3600
-
-- name: Enable boot
-  service:
-    name: quasselcore
-    state: started
-    enabled: true
-
