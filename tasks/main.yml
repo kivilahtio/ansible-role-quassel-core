@@ -9,6 +9,7 @@
   apt:
     name: quassel-core
     state: present
+    cache_valid_time: 3600
 
 - name: Enable quassel-core on boot
   service:
