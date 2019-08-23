@@ -1,0 +1,18 @@
+---
+
+#- name: Add Quassel PPA
+#  apt_repository:
+#    repo: "ppa:mamarley/quassel"
+#  when: quasselcore_use_ppa and ansible_distribution == 'Ubuntu'
+
+- name: Install quassel-core
+  apt:
+    name: quassel-core
+    state: present
+
+- name: Enable quassel-core on boot
+  service:
+    name: quasselcore
+    state: started
+    enabled: true
+
